@@ -38,3 +38,26 @@ const dhakaLatLong: readonly [number, number] = [23.8103, 90.4125]
 // dhakaLatLong.push(3423423)
 // dhakaLatLong[0] = 1324324 
 // if we add readonly, we can not push or change the value in this tuple
+
+
+// optional, default and rest parameter (...args)
+
+// optional
+const concatName = (firstName: string, lastName?: string) => {
+    if(!lastName){
+        return firstName;
+    }
+
+    return firstName + " " + lastName;
+}
+
+console.log(concatName("munim"))
+console.log(concatName("al", "munim"))
+// console.log(concatName("shahan" ,"al", "munim"))
+
+// default
+const greet = (fullname: string, greeting: string = "Hello") : void => {
+    console.log(greeting + " " + fullname);
+}
+
+greet("Munim")
