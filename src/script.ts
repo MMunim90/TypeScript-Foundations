@@ -20,3 +20,21 @@ function greeting(greet:string) {
 }
 
 console.log(greeting("Munim"))
+
+// array and tuple and readonly modifier
+
+const arr : string[] = ["munim", "is", "a", "good", "dev"]
+
+// arr.push(124323) // give error
+arr.push("say hi") // do not give error
+
+const numArr : number[] = [1, 2, 3]
+
+// generic array declaration
+const stringArr : Array<string> = ["Programming", "coding"]
+
+const dhakaLatLong: readonly [number, number] = [23.8103, 90.4125]
+
+// dhakaLatLong.push(3423423)
+// dhakaLatLong[0] = 1324324 
+// if we add readonly, we can not push or change the value in this tuple
