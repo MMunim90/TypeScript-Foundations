@@ -79,3 +79,75 @@ const logUserAction = (...args: [name: string, age: number, isActive: boolean]) 
 }
 
 logUserAction("Munim", 25, false)
+
+
+
+// object type, type alias and interface
+
+// type alias
+
+type firstName = string;
+type Address = {
+        streetName: string;
+        holdingNumber: number;
+    }
+
+type TUser = {
+    name: firstName;
+    age: number;
+    isActive: boolean;
+    action: () => void;
+    badges: string[];
+    address: Address
+}
+
+const user: TUser = {
+    name: "Munim",
+    age: 2143,
+    isActive: true,
+    action: () => console.log("Create"),
+    badges: ["abc", "def", "mno"],
+    address : {
+        streetName: "ABCD",
+        holdingNumber: 234243
+    }
+}
+
+// user.email = "munim@mail.com" 
+// console.log(user.phone);
+// show an error if any property does not exist on type
+
+const user2: TUser = {
+    name: "Rahim",
+    age: 2234,
+    isActive: true,
+    action: () => console.log("Create"),
+    badges: ["def", "mno", "rst"],
+    address : {
+        streetName: "ABCD",
+        holdingNumber: 234243
+    }
+}
+
+
+// interface
+interface IUser {
+    name: string;
+    age: number;
+    isActive: boolean;
+    action: () => void;
+    badges: string[];
+}
+
+const user3: IUser = {
+    name: "karim",
+    age: 2164,
+    isActive: true,
+    action: () => console.log("Create"),
+    badges: ["abc", "rdt", "uvw"],
+}
+
+
+// a simple diference in type alias and interface
+type TUserName = string; // its working
+// interface IUserName string // its not working
