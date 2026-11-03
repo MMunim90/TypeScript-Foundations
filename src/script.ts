@@ -33,6 +33,7 @@ const numArr : number[] = [1, 2, 3]
 // generic array declaration
 const stringArr : Array<string> = ["Programming", "coding"]
 
+// tuple with readonly [tuple length is always fixed and every parameter datatype is fixed]
 const dhakaLatLong: readonly [number, number] = [23.8103, 90.4125]
 
 // dhakaLatLong.push(3423423)
@@ -40,7 +41,7 @@ const dhakaLatLong: readonly [number, number] = [23.8103, 90.4125]
 // if we add readonly, we can not push or change the value in this tuple
 
 
-// optional, default and rest parameter (...args)
+// optional, default parameter
 
 // optional
 const concatName = (firstName: string, lastName?: string) => {
@@ -61,3 +62,20 @@ const greet = (fullname: string, greeting: string = "Hello") : void => {
 }
 
 greet("Munim")
+
+
+// rest parameter (...args) or spread operator
+
+const sum = (...numbers: number[]) => {
+    return numbers.reduce((total, sum) => total + sum, 0)
+};
+
+sum(1, 2, 3, 4, 5, 6)
+
+const logUserAction = (...args: [name: string, age: number, isActive: boolean]) => {
+    const [name, age] = args;
+
+    console.log("Name is : " + name)
+}
+
+logUserAction("Munim", 25, false)
